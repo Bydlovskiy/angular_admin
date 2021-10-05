@@ -1,0 +1,15 @@
+input{
+    width: 100%;
+}
+form{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+textarea{
+    height: 110px;
+}
+.btn-outline-dark{
+    width: 60px;
+}

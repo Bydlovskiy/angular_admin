@@ -1,0 +1,8 @@
+<div class="post-container">
+  <div class="post-card" *ngFor="let post of AllBlog">
+    <img width="300px" src="{{ post.imagePath }}" alt="">
+    <span class="date">{{ post.date | date :'longDate' }}   ,   {{ post.author }}</span>
+    <span class="title">{{ post.title | titlecase}}</span>
+    <span class="text">{{ post.text | slice : 0 : 10 }}</span>
+  </div>
+</div>

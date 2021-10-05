@@ -1,0 +1,20 @@
+.post-container{
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .post-card{
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        .date{
+            font-family:'Courier New', Courier, monospace;
+            font-weight: 700;
+            color: rgb(90, 90, 248);
+        }
+        .title{
+            font-weight: bold;
+            font-size: large;
+        }
+    }
+}

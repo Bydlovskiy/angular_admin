@@ -1,0 +1,13 @@
+
+
+
+<div class="Container">
+    <form class="nav flex-column" >
+        <button type="button" class="btn btn-outline-dark" [routerLink]="[ 'category' ]" routerLinkActive="active">Category</button>
+        <button type="button" class="btn btn-outline-dark" [routerLink]="[ 'products' ]" routerLinkActive="active">Products</button>
+        <button type="button" class="btn btn-outline-dark" [routerLink]="[ 'blog' ]" routerLinkActive="active" >Blogs</button>
+    </form>
+    <div class="create-container">
+        <router-outlet></router-outlet>
+    </div> 
+</div>

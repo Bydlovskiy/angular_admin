@@ -1,0 +1,32 @@
+
+<form [formGroup] = "Form" (ngSubmit)="addPost()" >
+    <input formControlName = "title" class="form-control title" type="text" placeholder="Title here...">
+    <textarea formControlName = "text" class="form-control" type="text" placeholder="Text here..."></textarea>
+    <input formControlName = "author" class="form-control" type="text" placeholder="Author here...">
+    <button  type="submit" class="btn btn-outline-dark" [disabled]="Form.invalid">{{isEdit ? 'Save' : 'Add' }}</button>
+</form>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Text</th>
+        <th scope="col">Date</th>
+        <th scope="col">Author</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of AllBlog">
+          <td>{{ post.id }}</td>
+          <td>{{ post.title }}</td>
+          <td>{{ post.text | slice : 0 : 10  }}</td>
+          <td>{{ post.date | date :'longDate' }}</td>
+          <td>{{ post.author  }}</td>
+          <td><button type="button" class="btn btn-dark" (click)="editPost(post,post.id)">Edit</button></td>
+          <td><button type="button" class="btn btn-dark" (click)="deletePost(post.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+
