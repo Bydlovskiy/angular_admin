@@ -10,6 +10,7 @@ import { BlogComponent } from './blog/blog.component';
 import { AdminBlogComponent } from './admin/admin-blog/admin-blog.component';
 import { AdminCategoryComponent } from './admin/admin-category/admin-category.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
+import { CategoryPipe } from './shared/pipes/category.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
     BlogComponent,
     AdminBlogComponent,
     AdminCategoryComponent,
-    AdminProductsComponent
+    AdminProductsComponent,
+    CategoryPipe
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,65 @@
-<p>admin-category works!</p>
+<div class="card" style="width: 100%;">
+  <div class="title-container">
+    <b class="card-title">Card title</b>
+    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addCategoryModal">{{isEdit ? 'Save' : 'Add'}}</button>
+  </div>
+  <hr>
+  <input type="text" [(ngModel)]="search" class="form-control" placeholder="filter category...">
+  <table class="table">
+    <thead>
+      <tr class="table-active">
+        <th scope="col">#</th>
+        <th scope="col" width="70%">Name</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let categor of categoryList | category:search ;let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ categor.category }}</td>
+        <td><button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addCategoryModal"
+            (click)="editCategory(categor)">Edit</button></td>
+        <td><button type="button" class="btn btn-dark" (click)="deleteModal(categor.id)" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="modal fade" id="addCategoryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add category</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form [formGroup]="categoryForm" (ngSubmit)="addCategory()">
+        <div class="modal-body">
+          <input type="text" class="form-control" formControlName="category">
+        </div>
+        <div class="modal-footer">
+          <button type="button"  class="btn btn-dark" data-bs-dismiss="modal" (click)="resetyForm()">Close</button>
+          <button type="submit" class="btn btn-dark" [disabled]="categoryForm.invalid"
+            data-bs-dismiss="modal">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="deleteModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" style="width: 45%;" class="btn btn-dark btn-lg" data-bs-dismiss="modal">Dismiss</button>
+        <button type="button" style="width: 45%;" class="btn btn-danger btn-lg" (click)="deleteCategory()" data-bs-dismiss="modal">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

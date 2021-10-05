@@ -1,0 +1,23 @@
+.card {
+  padding: 20px;
+
+  .title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .table{
+      margin-top: 20px;
+  }
+}
+
+.modal-dialog-centered{
+  width: 300px;
+  display: flex;
+
+}
+.modal-body{
+  display: flex;
+  justify-content: space-between;
+}
+

@@ -32,5 +32,24 @@
       "imagePath": "https://timesofindia.indiatimes.com/thumb/msid-69522041,width-1200,height-900,resizemode-4/.jpg",
       "id": 4
     }
-  ]
+  ],
+  "categories": [
+    {
+      "category": "Deserts",
+      "id": 2
+    },
+    {
+      "category": "Pasta",
+      "id": 3
+    },
+    {
+      "category": "Drinks",
+      "id": 4
+    },
+    {
+      "category": "Pizza",
+      "id": 5
+    }
+  ],
+  "products":[]
 }
